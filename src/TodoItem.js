@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import s from './TodoItem.module.css'
 
 const TodoItem = (props) => {
-    console.log('props=========', props)
 
     const { item, removeTodo, index, editHandleChange } = props;
     const [edit, setEdit] = useState(Boolean)
-    const [check, setCheck] = useState(Boolean)
     const [isChecked, setIsChecked] = useState(false);
     let disabled = "disabled";
     let enabled = !disabled;
@@ -20,16 +18,16 @@ const TodoItem = (props) => {
         setEdit(Boolean)
     }
 
-    const toggleCheckbox = (index) => {
+    const toggleCheckbox = () => {
         setIsChecked(!isChecked);
     };
 
     return (
 
         <div className={s.inputContainer}>
-            <div className={s.round} onClick={()=>toggleCheckbox(index)}>
+            <div className={s.round}>
                 <input type="checkbox" checked={isChecked} id="checkbox" />
-                <label for="checkbox"></label>
+                <label for="checkbox" onClick={toggleCheckbox}></label>
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Add Task"

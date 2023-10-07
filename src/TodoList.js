@@ -19,14 +19,13 @@ export const TodoList = () => {
     }
 
     const editHandleChange = (value, index) => {
-        console.log({ value, index })
         const updatedList = [...listItem];
         updatedList[index] = value;
         setListItem(updatedList);
+        
     }
 
     const removeTodo = (index) => {
-        console.log('index========', index)
         const newList = [...listItem];
         newList.splice(index, 1);
         setListItem(newList);
