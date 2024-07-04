@@ -12,6 +12,7 @@ const TodoItem = (props) => {
 
     const editHandler = (Boolean) => {
         setEdit(Boolean)
+        
         disabled = enabled;
     }
     const saveHandler = (Boolean) => {
